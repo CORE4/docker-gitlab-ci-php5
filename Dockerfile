@@ -1,8 +1,9 @@
-FROM debian
+FROM debian:jessie
 
+# The nodejs version from debian is outdated
 RUN apt-get update -y && apt-get install -y curl
-# We need a current npm-version
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+
 RUN apt-get update -y && apt-get install -y \
     nodejs \
     ruby \
