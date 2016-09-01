@@ -1,4 +1,4 @@
-Gitlab-CI Docker Maschoine for PHP5
+# Gitlab-CI Docker Maschine for PHP5
 
 This machine is used to deploy our PHP5 applications. It comes with PHP5 (duh!), NodeJS (npm) and Ruby (bundler).
 
