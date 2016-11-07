@@ -16,6 +16,7 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     update-locale LANG=en_US.UTF-8
 
 RUN apt-get update -y && apt-get install -y \
+    nodejs \
     ruby \
     ruby-dev \
     libmysqlclient-dev \
@@ -50,13 +51,3 @@ ENV LC_ALL=en_US.UTF-8 \
     LANG=en_US.UTF-8 \
     COMPOSER_NO_INTERACTION=1 \
     COMPOSER_ALLOW_SUPERUSER=1
-
-# Install older version of node & npm
-RUN cd /tmp && \
-    curl https://nodejs.org/download/release/v6.7.0/node-v6.7.0-linux-x64.tar.gz -O && \
-    cd /usr/local && \
-    tar -xzf /tmp/node-v6.7.0-linux-x64.tar.gz && \
-    rm /tmp/node-v6.7.0-linux-x64.tar.gz && \
-    cd /usr/local/bin && \
-    ln -s /usr/local/node-v6.7.0-linux-x64/bin/npm && \
-    ln -s /usr/local/node-v6.7.0-linux-x64/bin/node
