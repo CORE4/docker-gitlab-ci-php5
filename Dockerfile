@@ -35,6 +35,8 @@ RUN apt-get update -y && apt-get install -y \
     php5-redis \
     php5-sqlite
 
+RUN npm install -g yarn
+
 RUN cd /usr/local/bin/ && curl https://getcomposer.org/installer | php && mv composer.phar composer
 
 COPY config/prepare_environment /usr/local/bin/prepare_environment
